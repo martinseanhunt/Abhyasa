@@ -44,7 +44,7 @@ exports.flashValidationErrors = (err, req, res, next) => {
     
     res.redirect('back');
   } else if ( err.name === 'UserExistsError' ) {
-    req.flash('error', err.message);
+    req.flash('error', err.message + ' <a href="/login">Log In</a>');
     res.render('signup', {title: 'Sign Up', body: req.body, flashes: req.flash()});
   } else {
     return next(err);

@@ -17,15 +17,16 @@ block content
 
     button.button.main-home__button() Login / Sign Up To Get Started
 
-  .lightbox.login-modal.hidden
-    .lightbox__content.lightbox__content--left.login-modal__inner
-      ul.login-tabs
-        li: a.login-tabs__tab.login-tabs__tab--active(href="#") Login
-        li: a.login-tabs__tab(href="#") Sign Up
-      .form--signup.hidden
-        +signupForm()
-      .form--login
-        +loginForm()
+  .lightboxes
+    .lightbox.login-modal.hidden
+      .lightbox__content.lightbox__content--left.login-modal__inner
+        ul.login-tabs
+          li: a.login-tabs__tab.login-tabs__tab--active(href="#") Login
+          li: a.login-tabs__tab(href="#") Sign Up
+        .form--signup.hidden
+          +signupForm()
+        .form--login
+          +loginForm()
 
 block footer
   +centeredFooter('footer--fixed')

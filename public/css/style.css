@@ -149,6 +149,10 @@ h2{
   background: #a44ba5;
 }
 
+.form input[type=submit]:focus{
+    outline: none;
+}
+
 .start-sit{
   border-top: 1px solid #edf0f2;
   border-bottom: 1px solid #edf0f2;
@@ -307,6 +311,10 @@ h2{
   background: #a44ba5;
 }
 
+.button:focus{
+    outline: none;
+}
+
 .hidden{
   display: none;
 }
@@ -320,6 +328,7 @@ h2{
   left: 0;
   text-align: center;
   overflow: scroll;
+  z-index: 999;
 }
 
 .lightbox:before{ /* pseudo element to force vertical centering of child element */
