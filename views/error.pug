@@ -1,0 +1,15 @@
+extends layout
+
+include mixins/_centeredHeader
+
+block header
+  +centeredHeader()
+
+block content
+
+  .deverror
+    h1 theres a flippin error
+
+    h2 #{status}: #{message}
+
+    pre= stackHighlighted

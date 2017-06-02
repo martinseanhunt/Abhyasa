@@ -1,0 +1,27 @@
+mixin practiceLightbox(practice)
+
+  .lightbox.practice-modal(data-id=practice._id).hidden
+    .lightbox__content.practice-modal__inner.lightbox__content--left
+      
+      .practice-meta
+        span.practice-meta__type #{practice.time / 60} minute #{practice.practiceType} practice
+        span.practice-meta__date= h.date(practice.created)
+
+        ul.practice-meta__tags 
+          each tag in practice.tags
+            li.practice-meta__tag= tag
+
+      form.form.update-practice(action="/practices/update/" method="post")
+        label(for="description") Practice Journal
+        textarea(name="description" rows="10" required)= practice.description
+        input(type="hidden" name="id" value=practice._id)
+        input(type="submit" value="Update Journal")
+      a.close(href="#") Close
+      
+      .delete-container
+        a.delete-practice(href="#" data-id=practice._id) Delete Practice
+        .confirm-delete-practice.hidden(data-id=practice._id) 
+          span Are you sure? 
+            a.confirm-delete-practice__confirm(href="#" data-id=practice._id) Yes, I'm sure
+            span  | 
+            a.confirm-delete-practice__cancel(href="#" data-id=practice._id) No

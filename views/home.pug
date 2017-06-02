@@ -1,0 +1,31 @@
+extends layout
+
+include mixins/_loginForm
+include mixins/_signupForm
+
+block header
+
+  header.header.header--home
+    a.logo(href="/")
+      img.logo__img(src="/img/lotus.png" alt="Lotus Flower")
+      h1.logo__headline Abhyasa
+
+block content
+
+  .main-home
+    p.main-home__text Abhyasa is a simple tool for timing, journaling and analyzing trends in your stillness practice
+
+    button.button.main-home__button() Login / Sign Up To Get Started
+
+  .lightbox.login-modal.hidden
+    .lightbox__content.lightbox__content--left.login-modal__inner
+      ul.login-tabs
+        li: a.login-tabs__tab.login-tabs__tab--active(href="#") Login
+        li: a.login-tabs__tab(href="#") Sign Up
+      .form--signup.hidden
+        +signupForm()
+      .form--login
+        +loginForm()
+
+block footer
+  +centeredFooter('footer--fixed')

@@ -1,0 +1,31 @@
+include mixins/_flashes
+include mixins/_centeredHeader
+include mixins/_centeredFooter
+
+doctype html
+html
+  head
+    title= `${title} | ${h.sitename}`
+    link(rel="stylesheet" href="/css/reset.css")
+    link(rel="stylesheet" href="/css/style.css")
+    link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="shortcut icon" type="image/png" href="/img/lotus.png")
+  body
+    block header
+      +centeredHeader()
+
+    block messages
+      if locals.flashes
+        +loadFlashes(locals.flashes)
+        
+    block content
+
+    
+    block footer
+      +centeredFooter()
+
+    script(src="https://code.jquery.com/jquery-3.1.0.min.js" type="text/javascript")
+    script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.min.js")
+    script(type="text/javascript" src="/moment/moment-with-locales.min.js")
+    script(src="/js/frontend.js" type="text/javascript")

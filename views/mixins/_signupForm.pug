@@ -1,0 +1,11 @@
+mixin signupForm(body = {})
+  form.form(action="/signup" method="POST")
+    label(for="email") Name
+    input(type="text" name="name" placeholder="Your Name" value=body.name required)
+    label(for="email") Email Address
+    input(type="email" name="email" value=body.email placeholder="email@email.com" required)
+    label(for="password") Password
+    input(type="password" name="password" placeholder="password" required)
+    label(for="password-confirm") Confirm Password
+    input(type="password" name="password-confirm" placeholder="password" required)
+    input(type="submit" value="Sign Up")

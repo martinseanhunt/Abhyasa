@@ -1,0 +1,9 @@
+mixin pagination
+  .pagination
+    
+    if currentPage > 1
+      a.pagination__prev.pagination__link(href=`/dashboard/page/${parseFloat(currentPage) - 1}`) Prev
+    span  Page #{currentPage} of #{pages} - #{count} total results 
+  
+    if currentPage < pages
+      a.pagination__next.pagination__link(href=`/dashboard/page/${parseFloat(currentPage) + 1}`) Next

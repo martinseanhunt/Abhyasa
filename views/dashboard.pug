@@ -1,0 +1,58 @@
+extends layout
+
+include mixins/_practiceCard
+include mixins/_practiceLightbox
+include mixins/_pagination
+
+block content
+
+  a.logout(href="/logout") logout
+
+  .container.start-sit
+    form.timer()
+      .timer__text
+        label(for="timer") I want to sit for
+        input.timer__time(type="text" size="3" name="mins" placeholder="0" required)
+        span minutes
+      .timer__button-holder
+        input.button.timer__button(type="submit" value="Start a practice")
+
+  .container
+    .container__chart
+      canvas#chart
+      a.prev-chart(href="#") &lsaquo;
+      a.next-chart(href="#") &rsaquo;
+
+  .container
+    h2 Practice history
+    .practices
+      each practice in practices
+        +practiceCard(practice)
+    +pagination(currentPage, pages, count)    
+
+  .lightboxes
+    each practice in practices
+      +practiceLightbox(practice)
+
+    .lightbox.timer-modal.hidden
+      .lightbox__content.timer-modal__inner
+        
+        .countdown
+          span.countdown__time-remaining
+          audio.countdown__audio(src="/audio/bowl.mp3")
+
+          a.discard.countdown__cancel(href="#") Cancel practice
+
+
+    .lightbox.submit-modal.hidden
+      .lightbox__content.submit-modal__inner.lightbox__content--left
+        form.form.submit-practice(action="/practices" method="post")
+          label(for="description") Practice Journal
+          textarea(name="description" rows="10" required)
+          label(for="type") What type of practice was this? 
+          input(name="type" type="text" placeholder="e.g. Metta, Watching Breath, Ajna Chackra" required)
+          label(for="tags") Practice Tags (comma separated)
+          input(name="tags" type="text" placeholder="e.g. joy, fear, anger, calm")
+          input(name="seconds" type="hidden")
+          input(type="submit" value="Log Practice")
+        a.discard(href="#") Discard Practice

@@ -1,0 +1,12 @@
+extends layout
+
+include mixins/_centeredHeader
+include mixins/_signupForm
+include mixins/_loginForm
+
+block header 
+  +centeredHeader
+
+block content
+  .standaloneForm
+    +signupForm(body)

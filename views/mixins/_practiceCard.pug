@@ -1,0 +1,4 @@
+mixin practiceCard(practice)
+  .practices__practice(data-id=practice._id)
+    span.practice__type #{practice.time / 60} minute #{practice.practiceType} practice
+    span.practice__date= h.date(practice.created)
