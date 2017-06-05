@@ -15,7 +15,7 @@ const app = require('./app');
 let server; 
 
 // Connect to DB and start server - return promise for unit testing
-function runServer(databaseUrl=process.env.DATABASE, port=process.env.PORT) {
+function runServer(databaseUrl=process.env.DATABASE, port=process.env.PORT || 8080) {
   return new Promise((resolve, reject) => {
       // Connect to DB, if fail, stop function and return error
       mongoose.connect(databaseUrl);
