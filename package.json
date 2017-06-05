@@ -5,7 +5,7 @@
   "main": "./start.js",
   "scripts": {
     "test": "npm start",
-    "start": "nodemon ./start.js"
+    "start": "node ./start.js"
   },
   "author": "Me",
   "license": "ISC",
