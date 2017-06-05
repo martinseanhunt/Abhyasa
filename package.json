@@ -4,7 +4,6 @@
   "description": "",
   "main": "./start.js",
   "scripts": {
-    "test": "npm start",
     "start": "node ./start.js"
   },
   "author": "Me",
