@@ -403,6 +403,26 @@ $(function() {
   });
 
 
+  $('.discard-practice').click(function(e) {
+    e.preventDefault();
+    $(this).addClass('hidden');
+    $(`.confirm-discard-practice`).removeClass('hidden');
+  });
+
+  $('.confirm-discard-practice__cancel').click(function(e) {
+    e.preventDefault();
+    $('.confirm-discard-practice').addClass('hidden');
+    $(`.discard-practice`).removeClass('hidden');
+  });
+
+  $('.confirm-discard-practice__confirm').click(function(e) {
+    e.preventDefault();
+    $('.confirm-discard-practice').addClass('hidden');
+    $(`.discard-practice`).removeClass('hidden');
+    resetPractice();
+  });
+
+
 });
 
 

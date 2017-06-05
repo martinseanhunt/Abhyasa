@@ -151,21 +151,12 @@ exports.tagsChart = async (req, res) => {
     counts: []
   } 
 
-  /*
   tags.forEach(data => {
     json.labels.push(data._id);
     json.counts.push(data.count);
-  }); */
+  });
 
-  const results = tags.reduce((obj, tag) => {
-
-    obj.labels.push(tag._id);
-    obj.counts.push(tag.count);
-
-    return obj;
-  }, json);
-
-  res.json(results);
+  res.json(json);
 }
 
 

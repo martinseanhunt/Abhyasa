@@ -55,4 +55,13 @@ block content
           input(name="tags" type="text" placeholder="e.g. joy, fear, anger, calm")
           input(name="seconds" type="hidden")
           input(type="submit" value="Log Practice")
-        a.discard(href="#") Discard Practice
+
+
+        .discard-container
+          a.redlink.discard-practice(href="#") Discard Practice
+          .confirm-discard-practice.hidden
+            span Are you sure? 
+              a.redlink.confirm-discard-practice__confirm(href="#") Yes, I'm sure
+              span  | 
+              a.redlink.confirm-discard-practice__cancel(href="#") No
+

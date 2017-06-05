@@ -355,6 +355,22 @@ h2{
   text-align: left;
 }
 
+.discard-container{
+  margin-top: 25px;
+  display: block;
+  text-align: right;
+  font-size: 11px;
+}
+
+.redlink {
+  color: #b14028;
+  font-size: 11px;
+}
+
+.redlink:hover {
+  text-decoration: none;
+}
+
 .discard, .close{
   color: #b14028;
   font-size: 11px;
