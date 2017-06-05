@@ -2,3 +2,10 @@ language: node_js
 node_js: node
 services:
 - mongodb
+deploy:
+  provider: heroku
+  api_key:
+    secure: JT3B/Fr+ZDiANI179GUTNyfFC/QlFki8HfvylD7/bhAwuuG96NzF4ioNXYAd/NCih6As1eEfkgaz5VJc7FhDzK1XxRm5R9v1CKefV3q7JvnPxUfS2xKtUOnq2slxsisvS0HaEDKFkX5loWnoCYaNnBxJJoeUyZKz6sZyIViPWqQ43CpnUkLZ+HSfIaHcf7syGMO5X85sxNj8lkY4CMksMub11O1pVKB+87wIWuhfmiCKYx4YkW74cFcTdoxjVYi1YlV9FC+iA6pxWqXLbgVz5CCVBB4PcH267PHJhaCyDvGC2gBjcjVpzEpaP75uXFcvMRoKcig1GHbv15fkDu/iuplPowU/s5Ym70HgF/zU98FKDNksdhYoKlLi9chHymTdU7VtW84lyDDZs2AOZkuU0gLdgxIZbk/X/ZMOvdqvgoU2BMDGmpc/dgesmXMlJlFVX+SWodL/JH6pTrLn7NJPIAFFLnRAdUXMo0Z94MbD9EzQxNicuL8v/uj1aMkdYmXlSSFfShN7eHBhFLOlIjoncGS+swGaru+wX+sDvktH0UIFCvmqCNtWWD5OZbskdHqGwR82Q/uH6Ehw8qwjqpxe/yUjxXZaCKd/U4g32FF/q/KeEIlWI348xvRxaRMoZmx8ZCIRYPOsB46P+FBzTy5qDJoDW0boplN3x4VWhPtgNXU=
+  app: nameless-castle-44080
+  on:
+    repo: martinseanhunt/Abhyasa
