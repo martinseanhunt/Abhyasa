@@ -146,17 +146,26 @@ exports.tagsChart = async (req, res) => {
   // Get results
   const tags = await Practice.getTagsList(req.user._id);
 
-    const json = {
+  const json = {
     labels: [],
     counts: []
   } 
 
+  /*
   tags.forEach(data => {
     json.labels.push(data._id);
     json.counts.push(data.count);
-  });
+  }); */
 
-  res.json(json);
+  const results = tags.reduce((obj, tag) => {
+
+    obj.labels.push(tag._id);
+    obj.counts.push(tag.count);
+
+    return obj;
+  }, json);
+
+  res.json(results);
 }
 
 

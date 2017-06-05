@@ -68,7 +68,7 @@ const timeChartCallback = function(data) {
       data: {
           labels: data.labels,
           datasets: [{
-              label: "Minutes sat this year",
+              label: "Time practiced in minutes",
               backgroundColor: '#d3beef',
               borderColor: '#a44ba5',
               data: data.mins,
