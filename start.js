@@ -19,7 +19,6 @@ let server;
 
 // Connect to DB and start server - return promise for unit testing
 function runServer(databaseUrl=DATABASE_URL, port=PORT) {
-  console.log(DATABASE_URL);
   return new Promise((resolve, reject) => {
       // Connect to DB, if fail, stop function and return error
       mongoose.connect(databaseUrl);
