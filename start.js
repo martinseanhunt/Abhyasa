@@ -4,6 +4,9 @@ mongoose.Promise = global.Promise;
 // Get ENV variables
 require('dotenv').config({ path: 'variables.env' });
 
+// Get config vars
+const {PORT, DATABASE_URL} = require('./config');
+
 // Import all models. They can then be imported by name in any file
 require('./models/practiceModel');
 require('./models/userModel');
@@ -15,7 +18,7 @@ const app = require('./app');
 let server; 
 
 // Connect to DB and start server - return promise for unit testing
-function runServer(databaseUrl=process.env.DATABASE, port=process.env.PORT || 8080) {
+function runServer(databaseUrl=DATABASE_URL, port=PORT) {
   return new Promise((resolve, reject) => {
       // Connect to DB, if fail, stop function and return error
       mongoose.connect(databaseUrl);
