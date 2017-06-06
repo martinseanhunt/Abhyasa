@@ -552,6 +552,13 @@ h2{
   margin-top: 20px;
 }
 
+.infospan{
+  display: block;
+  text-align: center;
+  font-size: 11px;
+  margin-top: 25px;
+}
+
 
 /* Remove autofill color on form fields, CHROME */
 @-webkit-keyframes autofill {
