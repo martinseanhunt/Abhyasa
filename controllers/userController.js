@@ -34,8 +34,6 @@ exports.createUser = async (req, res, next) => {
     email: striptags(req.body.email)
   });
 
-  console.log(user);
-
   // .register is a passport-local-mongoose function, is callback based so needs to 
   // be promisified
   const registerWithPromise = promisify(User.register, User);

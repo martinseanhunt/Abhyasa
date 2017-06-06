@@ -53,7 +53,7 @@ exports.dashboard = async (req, res) => {
 
   const pages = Math.ceil(count / limit);
 
-  res.render('dashboard', { title: 'Dashboard', practices, currentPage, count, pages });
+  return res.render('dashboard', { title: 'Dashboard', practices, currentPage, count, pages });
 }
 
 
@@ -73,7 +73,8 @@ exports.createPractice = async (req, res) => {
     req.body.tags = [];
   }
   const practice = await (new Practice(req.body)).save();
-  res.json(practice); 
+
+  return res.json(practice); 
 }
 
 exports.updatePractice = async (req, res) => {
@@ -89,7 +90,7 @@ exports.updatePractice = async (req, res) => {
     runValidators: true
   });
 
-  res.json(newPractice);
+  return res.json(newPractice);
 }
 
 exports.deletePractice = async (req, res) => {

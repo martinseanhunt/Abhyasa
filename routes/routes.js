@@ -9,7 +9,6 @@ const router = express.Router();
 router.get('/', practiceController.home);
 
 router.get('/dashboard', 
-  authController.isLoggedIn,
   catchErrors(practiceController.dashboard)
 );
 
