@@ -102,7 +102,8 @@ describe('Practices', function() {
         spyresult.tags.should.have.lengthOf(3);
 
         // Why doesn't this work
-        // spyresult.should.include.keys('description', 'practiceType', 'tags', '_id', 'time', 'created');
+        console.log(spyresult);
+        spyresult.should.include.keys('description', 'practiceType', 'tags', '_id', 'time', 'created');
         
         return Practice.findById(spyresult._id); 
       }).then(dbresult => {
@@ -118,15 +119,11 @@ describe('Practices', function() {
         
 
       /*
-
       console.log('args: why are the args giving us what was returned?');
       console.log(spy.firstCall.args);
 
-      console.log('sinons returned:');
-      console.log(spy.firstCall.result);
-
       console.log('our returned: Why is this undefined?');
-      console.log(returned);
+      console.log(result);
       // if we manually set the returned val to something in the create function it works as expected... what? 
       */
 

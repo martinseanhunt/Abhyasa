@@ -343,10 +343,33 @@ const loadPrevChart = function(e) {
   }
 }
 
+const nextSlide = function() {
+  const currentSlide = $(this).index();
+  // index above is 0 based so -1 from length. -1 again because the arrow hover is a child of slides
+  const slideCount = $(".slider__slides").children().length - 2; 
+  let nextSlide = currentSlide + 1;
+  if (currentSlide === slideCount) nextSlide = 0; 
+
+  $(this).addClass('hidden');
+  $('.slidebuttons__btn').removeClass('slidebuttons__btn--active');
+  $('.slider__slides').children().eq(nextSlide).removeClass('hidden');
+  $('.slider__slidebuttons').children().eq(nextSlide).addClass('slidebuttons__btn--active');
+}
+
+const goToSlide = function(e) { 
+  e.preventDefault();
+  let nextSlide = $(this).index();
+
+  $('.slidebuttons__btn').removeClass('slidebuttons__btn--active');
+  $('.slider__slides .slide').addClass('hidden');
+  $('.slider__slides').children().eq(nextSlide).removeClass('hidden');
+  $('.slider__slidebuttons').children().eq(nextSlide).addClass('slidebuttons__btn--active');
+} 
 
 // listeners
 
 $(function() {
+
 
   if ( $( "#chart" ).length ) loadCurrentChart();
 
@@ -356,6 +379,8 @@ $(function() {
   $('form.timer').submit(startTimer);
   $('.next-chart').click(loadNextChart);
   $('.prev-chart').click(loadPrevChart);
+  $('.slider .slide').click(nextSlide);
+  $('.slider .slidebuttons__btn').click(goToSlide);
 
 
   $('.practices').on('click', '.practices__practice', openPractice);

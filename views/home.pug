@@ -13,8 +13,39 @@ block header
 block content
 
   .main-home
-    p.main-home__text Abhyasa is a simple tool for timing, journaling and analyzing trends in your stillness practice
+    .slider
+      .slider__slides
+        .slide
+          p.main-home__text Abhyasa is a simple tool for timing, journaling and analyzing trends in your stillness practice
+        .slide.hidden
+          p.main-home__text Abhyasa helps you to see common patterns in your practice and how they evolve over time...
+        .slide.hidden
+          img(src='img/chartScreen.png' alt="Chart of common themes")
+        .slide.hidden
+          p.main-home__text As well as a simple, easy to use practice timer and journal...
+        .slide.hidden
+          img(src='img/timerScreen.png' alt="Chart of common themes")
+        .slide.hidden
+          img(src='img/journalScreen.png' alt="Chart of common themes")
 
+        a.slider__nextbutton(href="#") &rsaquo;
+      
+      ul.slider__slidebuttons
+        li.slidebuttons__btn.slidebuttons__btn--active
+          a(href="#") &#183;
+        li.slidebuttons__btn 
+          a(href="#") &#183;
+        li.slidebuttons__btn 
+          a(href="#") &#183;
+        li.slidebuttons__btn 
+          a(href="#") &#183;
+        li.slidebuttons__btn 
+          a(href="#") &#183;
+        li.slidebuttons__btn 
+          a(href="#") &#183;
+      
+      
+    
     button.button.main-home__button() Login / Sign Up To Get Started
 
   .lightboxes
