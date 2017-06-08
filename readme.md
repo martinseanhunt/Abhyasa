@@ -20,9 +20,6 @@ Open [`localhost:8080`]
 >   npm run test
 ```
 
-<h2>About the app</h2>
-<p></p>
-
 <h2>Technology Used</h2>
 
 <h3>Front End</h3>
