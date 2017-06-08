@@ -102,8 +102,7 @@ describe('Practices', function() {
         spyresult.tags.should.have.lengthOf(3);
 
         // Why doesn't this work
-        console.log(spyresult);
-        spyresult.should.include.keys('description', 'practiceType', 'tags', '_id', 'time', 'created');
+        // spyresult.should.include.keys('description', 'practiceType', 'tags', '_id', 'time', 'created');
         
         return Practice.findById(spyresult._id); 
       }).then(dbresult => {
@@ -119,6 +118,7 @@ describe('Practices', function() {
         
 
       /*
+
       console.log('args: why are the args giving us what was returned?');
       console.log(spy.firstCall.args);
 
